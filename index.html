@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="slots.css" />
+    <script src="slots.js"></script>
+</head>
+
+<body>
+    <canvas id="slots_canvas" width="1200" height="600"></canvas><br />
+    <input id="go_button" type="submit" onmouseup="start()" value="go" /a><br />
+    <label for="speed">spin speed:</label>
+    <input id="speed" type="input" value="80" onchange="setSpeed()" /><br />
+    <label for="period">spin period (in slots):</label>
+    <input id="period" type="input" value="100" onchange="setPeriod()" /><br />
+    <label for="slow_down_period">slow down period (in slots):</label>
+    <input id="slow_down_period" type="input" value="25" onchange="setSlowDownPeriod()" /><br />
+    <label for="slow_down_constant">slow down constant:</label>
+    <input id="slow_down_constant" type="input" value="70" onchange="setSlowDownConstant()" /><br />
+    <label for="stop_delay">stop delay (in slots):</label>
+    <input id="stop_delay" type="input" value="5" onchange="setStopDelay()" /><br />
+    <br /><br />
+    <div id=log></div>
+</body>
+
+</html>

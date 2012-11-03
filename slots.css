@@ -1,0 +1,14 @@
+#slots {
+    margin:0; padding:0;
+    width:800px; height:500px;
+    background-color:#000;
+}
+
+#log {
+    margin:0; padding:0;
+    width:800px; height:800px;
+}
+
+#go_button {
+    width:100px; height:100px;
+}
