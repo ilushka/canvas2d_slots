@@ -31,9 +31,9 @@ function log(txt) {
 
 function SlotMachine(config) {
     this.reelCount = 0;
+    this.slotCount = 0;
 //    this.isReelSpinning = new Array();
     this.stopReel = -1;
-    this.slotCount = 4;
     this.slotImages = new Array();
     this.nextSlot = 0;
     this.slotSize = 200;
@@ -54,14 +54,14 @@ function SlotMachine(config) {
 
     // Initialization:
 
-    for (var p in config) {
-        if (this.hasOwnProperty(p))
-            this[p] = config[p];
-    } 
+    if (config.hasOwnProperty('reelCount'))
+        this.reelCount = config.reelCount;
+    if (config.hasOwnProperty('slotCount'))
+        this.slotCount = config.slotCount;
 
-    for (var ii = 0; ii < this.slotCount; ++ii) {
+    for (var ii = 0; ii < config.slotImages.length; ++ii) {
         this.slotImages[ii] = new Image();
-        this.slotImages[ii].src = 'slot' + ii + '.png';
+        this.slotImages[ii].src = config.slotImages[ii];
     }
 }
 
@@ -158,7 +158,9 @@ function start() {
         ctx = canvas.getContext('2d');
 
         var config = {
-            reelCount : 6,
+            reelCount: 6,
+            slotCount: 10,
+            slotImages: ['slot0.png', 'slot1.png', 'slot2.png', 'slot3.png', 'slot4.png', 'slot5.png', 'slot6.png', 'slot7.png', 'slot8.png', 'slot9.png']
         };
         slotMachine = new SlotMachine(config);
     }
